@@ -37,3 +37,7 @@ Avanade Australia have sponsored beer and pizza, and some people in the industry
 **About the event space at Fishburners:**
 
 A big thank you to Fishburners who have provided the space for our meetup. Fishburners is Australia’s largest community of tech startups and a not for profit organisation. They support over 300 startups in their communities in Brisbane and Sydney and host more than 500 events around Australia. They offer a free one week trial which you can take up here: www.fishburners.org
+
+## Private chain
+In the folder, there is a genesis.json file.  
+-- geth --datadir /Volumes/Chains/hack init /Volumes/Chains/hack/genesis.json
