@@ -38,6 +38,35 @@ Avanade Australia have sponsored beer and pizza, and some people in the industry
 
 A big thank you to Fishburners who have provided the space for our meetup. Fishburners is Australia’s largest community of tech startups and a not for profit organisation. They support over 300 startups in their communities in Brisbane and Sydney and host more than 500 events around Australia. They offer a free one week trial which you can take up here: www.fishburners.org
 
+## About the code
+
+### Stock or products
+
+Beer products, such as Newstead Brewery 21 Feet Seven Inches porter are represented in the smart contract as a struct.
+```
+    enum beerType {lager, stout, porter, ipa}
+    
+    //Brewers products, such as Newstead Brewery 21 Feet Seven Inches porter
+    struct product {
+        address brewer;
+        beerType beerType;
+        string name;
+        int ml;
+        string sku;
+    }
+```
+
+The brewer, assigned by their public key, can add or discontinue products.  These stock structs are stored in "mappings".
+
+### Adding supply
+
+Once the brewer brews the product, they then add quantities of stock to the blockchain.  Ready for sale or distribution.  Because of the transparancey of the chain, merchants / ATO etc can see the brewers stock levels.
+
+### Trading stock
+
+
+### Forcasting demand
+
 ## Private chain
 In the folder, there is a genesis.json file.  
 -- geth --datadir /Volumes/Chains/hack init /Volumes/Chains/hack/genesis.json
