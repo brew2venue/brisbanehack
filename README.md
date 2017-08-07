@@ -42,7 +42,7 @@ A big thank you to Fishburners who have provided the space for our meetup. Fishb
 
 ### Stock or products
 
-Beer products, such as Newstead Brewery 21 Feet Seven Inches porter are represented in the smart contract as a struct.
+Beer products, such as "Newstead Brewery 21 Feet Seven Inches porter" are represented in the smart contract as a struct.  The product should have a unique key, such as a primary key.  The foregin key is brewers address, or Ethereum public key.
 ```
     enum beerType {lager, stout, porter, ipa}
     
@@ -51,16 +51,26 @@ Beer products, such as Newstead Brewery 21 Feet Seven Inches porter are represen
         address brewer;
         beerType beerType;
         string name;
-        int ml;
-        string sku;
+        int ml;  //size of bottle / can in milliletres
+        byte32 sku;
     }
 ```
 
-The brewer, assigned by their public key, can add or discontinue products.  These stock structs are stored in "mappings".
+The brewer, assigned by their public key, can add or discontinue products.  These stock structs are stored in "mappings" on the smart contract.  The address key in the mapping returns an array of products.
+
+```
+    mapping(address => product[]); 
+```
 
 ### Adding supply
 
-Once the brewer brews the product, they then add quantities of stock to the blockchain.  Ready for sale or distribution.  Because of the transparancey of the chain, merchants / ATO etc can see the brewers stock levels.
+Once the brewer brews the product, they then add quantities of stock to the blockchain.  Ready for sale or distribution.  Because of the transparancey of the chain, merchants / ATO etc can see the brewers stock levels.  Only the brewer can add their item.  This is asserted by the require method.
+
+```
+    function issue(string _sky, int quantity) {
+        
+    }
+```
 
 ### Trading stock
 
@@ -70,3 +80,9 @@ Once the brewer brews the product, they then add quantities of stock to the bloc
 ## Private chain
 In the folder, there is a genesis.json file.  
 -- geth --datadir /Volumes/Chains/hack init /Volumes/Chains/hack/genesis.json
+
+### Appendix
+
+## Ropsten Testnet keys
+
+| Actor | Public Key | Private Key
