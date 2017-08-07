@@ -85,4 +85,8 @@ In the folder, there is a genesis.json file.
 
 ### Ropsten Testnet keys
 
-| Actor | Public Key | Private Key
+A set of test keys are created on MyEtherWallet.com on the Ropsten network.  The .json files can be found in the /keys folder.  The password is Test12345
+
+| Actor | Public Key
+| Brewer 1 | 0x64ae08fec098ed35c169afc933d06695323dea5d
+| Brewer 2 | 0xd8394f24a682d49748bd448c056141dd92e5bad9
