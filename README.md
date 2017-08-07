@@ -81,8 +81,8 @@ Once the brewer brews the product, they then add quantities of stock to the bloc
 In the folder, there is a genesis.json file.  
 -- geth --datadir /Volumes/Chains/hack init /Volumes/Chains/hack/genesis.json
 
-### Appendix
+## Appendix
 
-## Ropsten Testnet keys
+### Ropsten Testnet keys
 
 | Actor | Public Key | Private Key
