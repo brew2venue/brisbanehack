@@ -42,7 +42,7 @@ A big thank you to Fishburners who have provided the space for our meetup. Fishb
 
 ### Stock or products
 
-Beer products, such as "Newstead Brewery 21 Feet Seven Inches porter" are represented in the smart contract as a struct.  The product should have a unique key, such as a primary key.  The foregin key is brewers address, or Ethereum public key.
+Beer products, such as "Newstead Brewery 21 Feet Seven Inches porter" are represented in the smart contract as a struct.  The product should have a unique key, such as a primary key.  The foreign key is brewers address, or Ethereum public key.
 ```
     enum beerType {lager, stout, porter, ipa}
     
@@ -51,7 +51,7 @@ Beer products, such as "Newstead Brewery 21 Feet Seven Inches porter" are repres
         address brewer;
         beerType beerType;
         string name;
-        int ml;  //size of bottle / can in milliletres
+        int ml;  //size of bottle / can in millilitres
         byte32 sku;
     }
 ```
@@ -64,7 +64,7 @@ The brewer, assigned by their public key, can add or discontinue products.  Thes
 
 ### Adding supply
 
-Once the brewer brews the product, they then add quantities of stock to the blockchain.  Ready for sale or distribution.  Because of the transparancey of the chain, merchants / ATO etc can see the brewers stock levels.  Only the brewer can add their item.  This is asserted by the require method.
+Once the brewer brews the product, they then add quantities of stock to the blockchain.  Ready for sale or distribution.  Because of the transparency of the chain, merchants / ATO etc can see the brewers stock levels.  Only the brewer can add their item.  This is asserted by the require method.
 
 ```
     function issue(string _sky, int quantity) {
@@ -75,18 +75,22 @@ Once the brewer brews the product, they then add quantities of stock to the bloc
 ### Trading stock
 
 
-### Forcasting demand
+### Forecasting demand
 
 ## Private chain
 In the folder, there is a genesis.json file.  
--- geth --datadir /Volumes/Chains/hack init /Volumes/Chains/hack/genesis.json
-
+`geth --datadir /Volumes/Chains/hack init /Volumes/Chains/hack/genesis.json`
 ## Appendix
 
 ### Ropsten Testnet keys
 
-A set of test keys are created on MyEtherWallet.com on the Ropsten network.  The .json files can be found in the /keys folder.  The password is Test12345
+A set of test keys are created on MyEtherWallet.com on the Ropsten network.
 
-| Actor | Public Key
-| Brewer 1 | 0x64ae08fec098ed35c169afc933d06695323dea5d
-| Brewer 2 | 0xd8394f24a682d49748bd448c056141dd92e5bad9
+The .json files can be found in the /keys folder.
+
+| Actor | Public Key |
+| ----- | ---------- |
+| Brewer 1 | 0x64ae08fec098ed35c169afc933d06695323dea5d |
+| Brewer 2 | 0xd8394f24a682d49748bd448c056141dd92e5bad9 |
+
+The password is *Test12345*
