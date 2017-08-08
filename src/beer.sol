@@ -1,17 +1,32 @@
 pragma solidity ^0.4.10;
-contract brew2venue{
+
+contract brew2venue {
     enum beerType {lager, stout, porter, ipa}
-    struct bottle {
-            string batch;
-            uint256 bottleDate;
-            int cost;
-            int abv;
+    
+    //Object to hold beer product, such as Newstead Brewery 21 Feet Seven Inches porter
+    struct beer {
+        address brewer;
+        beerType beerType;
+        string name;
+        int ml;  //size of bottle / can in milliletres
+        bytes32 sku;
     }
-    function add (string _batch, int _cost, int _abv)
+    
+    function add (string _batch, int _abv)
     {
-        bottle memory _bottle = bottle (_batch, block.timestamp, _cost, _abv);
+        beer memory _beer = beer (_batch, block.timestamp, _cost, _abv);
         bottles.push(_bottle);
     }
-    bottle [] public bottles;
+    
+    //Add new product to the blockchain
+    function newProduct(beerType _beerType, string _name, int _ml, bytes _sku)
+    {
+        beer memory _beer = beer (msg.sender, _beerTye, _name, _ml, _sku);
+        _products(msg.sender).push(_beer);
+    }
+    
+    beer [] public bottles;
 
+    //Products per brewer
+    mapping (address => bottle[]) _products;
 }
