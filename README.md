@@ -56,7 +56,7 @@ Beer products, such as "Newstead Brewery 21 Feet Seven Inches porter" are repres
     }
 ```
 
-The brewer, assigned by their public key, can add or discontinue products.  These stock structs are stored in "mappings" on the smart contract.  The address key in the mapping returns an array of products.
+The brewer, assigned by their public key, can add or discontinue products.  These stock structs are stored in "mappings" on the smart contract.  The address key in the mapping returns an array of products, where the key is that of the brewer.  So we can see their collection of delicious beer products.
 
 ```
     mapping(address => product[]); 
