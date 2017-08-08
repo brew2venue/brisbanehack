@@ -8,7 +8,7 @@ contract brew2venue {
         address brewer;
         beerType beerType;
         string name;
-        int ml;  //size of bottle / can in milliletres
+        int ml;  //size of bottle / can in millilitres
         bytes32 sku;
     }
     
